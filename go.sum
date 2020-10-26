@@ -6,6 +6,9 @@ github.com/howeyc/gopass v0.0.0-20190910152052-7cb4b85ec19c h1:aY2hhxLhjEAbfXOx2
 github.com/howeyc/gopass v0.0.0-20190910152052-7cb4b85ec19c/go.mod h1:lADxMC39cJJqL93Duh1xhAs4I2Zs8mKS89XWXFGp9cs=
 github.com/jessevdk/go-flags v1.4.0 h1:4IU2WS7AumrZ/40jfhf4QVDMsQwqA7VEHozFRrGARJA=
 github.com/jessevdk/go-flags v1.4.0/go.mod h1:4FA24M0QyGHXBuZZK/XkWh8h0e1EYbRYJSGM75WSRxI=
+github.com/kyokomi/emoji v1.5.1 h1:qp9dub1mW7C4MlvoRENH6EAENb9skEFOvIEbp1Waj38=
+github.com/kyokomi/emoji v2.2.4+incompatible h1:np0woGKwx9LiHAQmwZx79Oc0rHpNw3o+3evou4BEPv4=
+github.com/kyokomi/emoji v2.2.4+incompatible/go.mod h1:mZ6aGCD7yk8j6QY6KICwnZ2pxoszVseX1DNoGtU2tBA=
 github.com/shazow/rateio v0.0.0-20150116013248-e8e00881e5c1 h1:Lx3BlDGFElJt4u/zKc9A3BuGYbQAGlEFyPuUA3jeMD0=
 github.com/shazow/rateio v0.0.0-20150116013248-e8e00881e5c1/go.mod h1:vt2jWY/3Qw1bIzle5thrJWucsLuuX9iUNnp20CqCciI=
 github.com/shazow/rateio v0.0.0-20200113175441-4461efc8bdc4 h1:zwQ1HBo5FYwn1ksMd19qBCKO8JAWE9wmHivEpkw/DvE=

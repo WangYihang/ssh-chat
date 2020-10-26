@@ -17,7 +17,7 @@ import (
 	"github.com/shazow/ssh-chat/sshd"
 )
 
-const maxInputLength int = 1024
+const maxInputLength int = 0x1000
 
 // GetPrompt will render the terminal prompt string based on the user.
 func GetPrompt(user *message.User) string {
@@ -26,7 +26,7 @@ func GetPrompt(user *message.User) string {
 	if cfg.Theme != nil {
 		name = cfg.Theme.ColorName(user)
 	}
-	return fmt.Sprintf("[%s] ", name)
+	return fmt.Sprintf("%s: ", name)
 }
 
 // Host is the bridge between sshd and chat modules
@@ -179,7 +179,7 @@ func (h *Host) Connect(term *sshd.Terminal) {
 	if h.isOp(term.Conn) {
 		member.IsOp = true
 	}
-	ratelimit := rateio.NewSimpleLimiter(3, time.Second*3)
+	ratelimit := rateio.NewSimpleLimiter(0x10, time.Second*1)
 
 	logger.Debugf("[%s] Joined: %s", term.Conn.RemoteAddr(), user.Name())
 
