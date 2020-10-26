@@ -17,7 +17,7 @@ import (
 	"github.com/shazow/ssh-chat/sshd"
 )
 
-const maxInputLength int = 0x1000
+const maxInputLength int = 0x4000
 
 // GetPrompt will render the terminal prompt string based on the user.
 func GetPrompt(user *message.User) string {

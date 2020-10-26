@@ -108,10 +108,10 @@ func (m PublicMsg) ParseCommand() (*CommandMsg, bool) {
 
 func (m PublicMsg) Render(t *Theme) string {
 	if t == nil {
-		return emoji.Sprintf("%s", m.String())
+		return emoji.Sprintf("[%s] %s", m.Timestamp().UTC().Format(timestampFmt), m.String())
 	}
 
-	return fmt.Sprintf("%s: %s", t.ColorName(m.from), emoji.Sprintf("%s", m.body))
+	return fmt.Sprintf("[%s] %s: %s", m.Timestamp().UTC().Format(timestampFmt), t.ColorName(m.from), emoji.Sprintf("%s", m.body))
 }
 
 // RenderFor renders the message for other users to see.
@@ -128,15 +128,15 @@ func (m PublicMsg) RenderFor(cfg UserConfig) string {
 	if cfg.Bell {
 		body += Bel
 	}
-	return fmt.Sprintf("%s: %s", cfg.Theme.ColorName(m.from), body)
+	return fmt.Sprintf("%s: %s", cfg.Theme.ColorName(m.from), emoji.Sprintf("%s", body))
 }
 
 // RenderSelf renders the message for when it's echoing your own message.
 func (m PublicMsg) RenderSelf(cfg UserConfig) string {
 	if cfg.Theme == nil {
-		return fmt.Sprintf("%s: %s", m.from.Name(), m.body)
+		return fmt.Sprintf("[%s] %s: %s", m.Timestamp().UTC().Format(timestampFmt), m.from.Name(), emoji.Sprintf("%s", m.body))
 	}
-	return fmt.Sprintf("%s: %s", cfg.Theme.ColorName(m.from), m.body)
+	return fmt.Sprintf("[%s] %s: %s", m.Timestamp().UTC().Format(timestampFmt), cfg.Theme.ColorName(m.from), emoji.Sprintf("%s", m.body))
 }
 
 func (m PublicMsg) String() string {
